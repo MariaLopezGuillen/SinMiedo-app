@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background:
+        radial-gradient(circle at top right, #ead8ff 0%, transparent 25%),
+        radial-gradient(circle at bottom left, #d8f9ff 0%, transparent 20%),
+        #f8f9ff;
+    overflow-x: hidden;
+    color: #151D5C;
+}
+
+/* ── NAVBAR ── */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+}
+
+.logo-img {
+    height: 10px;
+    width: auto;
+    max-width: 160px;
+}
+
+nav {
+    display: flex;
+    gap: 38px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #151D5C;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #D64A90;
+}
+
+.login-btn {
+    padding: 16px 30px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #6B4EBA, #D64A90);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(214, 74, 144, 0.25);
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ── HERO ── */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 30px 8%;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #efe8ff;
+    color: #6B4EBA;
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.hero-left h1 {
+    font-size: 82px;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 800;
+    letter-spacing: -3px;
+}
+
+.hero-left h1 span {
+    color: #D64A90;
+    font-style: italic;
+}
+
+.hero-left p {
+    max-width: 620px;
+    font-size: 19px;
+    color: #646b92;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* ── FEATURES ── */
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ── BUTTONS ── */
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.primary-btn {
+    padding: 18px 38px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #6B4EBA, #29A2CA);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(41, 162, 202, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    padding: 18px 38px;
+    border-radius: 18px;
+    border: 2px solid #6B4EBA;
+    background: transparent;
+    color: #6B4EBA;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: #6B4EBA;
+    color: white;
+}
+
+/* ── PHONE ── */
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.circle-bg {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ead8ff, #dff8ff);
+    z-index: 0;
+}
+
+.phone {
+    width: 350px;
+    height: 720px;
+    background: #101010;
+    border-radius: 45px;
+    padding: 14px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.25);
+    transform: rotate(-5deg);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px;
+}
+
+.phone-logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.phone-screen p {
+    color: #6b7195;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.friends {
+    font-size: 70px;
+    margin-bottom: 35px;
+}
+
+.start-btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #6B4EBA, #29A2CA);
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ── CARDS ── */
+.section-title {
+    padding: 0 8%;
+    margin-bottom: 30px;
+    margin-top: 60px;  
+    font-size: 32px;
+    font-weight: 800;
+    color: #151D5C;
+}
+
+.cards {
+    width: 100%;
+    padding: 0 8% 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #6B4EBA, #29A2CA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.card p {
+    color: #6d7193;
+    line-height: 1.8;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 1200px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 64px;
+    }
+
+    .hero-left p {
+        margin: auto auto 40px auto;
+    }
+
+    .features {
+        align-items: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .hero-left h1 {
+        font-size: 48px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .phone {
+        width: 300px;
+        height: 620px;
+    }
+}
