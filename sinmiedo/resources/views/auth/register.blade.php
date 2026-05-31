@@ -1,52 +1,201 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear cuenta | Sin Miedo</title>
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <script src="{{ asset('js/register.js') }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="register-body">
+
+<div class="register-container">
+
+    <!-- LEFT -->
+
+    <div class="register-left">
+
+        <div class="logo-box">
+
+            <div class="shield">
+                <img src="{{ asset('images/logo.png') }}" alt="Escudo" class="logo">
+            </div>
+
+
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <h2>
+            Tu espacio seguro 💜
+        </h2>
+
+        <p>
+            Habla sin miedo, pide ayuda y conecta
+            con personas que realmente te escuchan.
+        </p>
+
+        <div class="register-features">
+
+            <div class="feature-item">
+                🔒 Usuario  anónimo
+            </div>
+
+            <div class="feature-item">
+                🛡️ Privacidad protegida
+            </div>
+
+            <div class="feature-item">
+                🤝 Ayuda profesional
+            </div>
+
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+    </div>
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+    <!-- RIGHT -->
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+    <div class="register-right">
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+        <form method="POST" action="{{ route('register') }}" class="register-form">
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+            @csrf
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+            <h3>
+                Crear cuenta
+            </h3>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+            <!-- REAL NAME -->
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+            <div class="input-group">
+
+                <label>Nombre real</label>
+
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    value="{{ old('name') }}"
+                    required
+                    autofocus
+                    autocomplete="name"
+                    placeholder="Tu nombre real"
+                >
+
+                @error('name')
+                    <span class="error">
+                        {{ $message }}
+                    </span>
+                @enderror
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label>Email</label>
+
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    value="{{ old('email') }}"
+                    required
+                    autocomplete="username"
+                    placeholder="ejemplo@email.com"
+                >
+
+                @error('email')
+                    <span class="error">
+                        {{ $message }}
+                    </span>
+                @enderror
+
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label>Contraseña</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    required
+                    autocomplete="new-password"
+                    placeholder="********"
+                >
+
+                @error('password')
+                    <span class="error">
+                        {{ $message }}
+                    </span>
+                @enderror
+
+            </div>
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="input-group">
+
+                <label>Confirmar contraseña</label>
+
+                <input
+                    id="password_confirmation"
+                    type="password"
+                    name="password_confirmation"
+                    required
+                    autocomplete="new-password"
+                    placeholder="********"
+                >
+
+                @error('password_confirmation')
+                    <span class="error">
+                        {{ $message }}
+                    </span>
+                @enderror
+
+            </div>
+
+            <!-- CONSENT -->
+
+            <div class="consent-box">
+
+                <label>
+                    <input type="checkbox" required>
+
+                    Acepto que Sin Miedo almacene mis datos
+                    de forma segura para proteger la comunidad.
+                </label>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit" class="register-btn-custom">
+                Crear cuenta
+            </button>
+
+            <!-- LINKS -->
+
+            <div class="bottom-links">
+
+                <a href="{{ route('login') }}">
+                    ¿Ya tienes cuenta?
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

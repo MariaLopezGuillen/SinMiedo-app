@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $posts = ForumPost::with('user')->latest()->paginate(10);
@@ -29,13 +24,13 @@ class ForumController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'body' => 'required|string|min:20',
+            'body'  => 'required|string|min:20',
         ]);
 
         ForumPost::create([
             'user_id' => Auth::id(),
-            'title' => $request->title,
-            'body' => $request->body,
+            'title'   => $request->title,
+            'body'    => $request->body,
         ]);
 
         return redirect()->route('forum.index')->with('success', 'Tu publicación fue creada con éxito.');

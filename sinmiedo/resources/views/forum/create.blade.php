@@ -1,43 +1,65 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nueva publicación en el foro</h2>
-                <p class="text-sm text-gray-500">Comparte tu experiencia o busca consejos en un espacio seguro.</p>
-            </div>
-            <div>
-                <a href="{{ route('forum.index') }}" class="inline-flex items-center px-4 py-2 bg-gray-100 border border-transparent rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200">Volver al foro</a>
-            </div>
-        </div>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Nueva publicación') }}
+        </h2>
+        <link rel="stylesheet" href="{{ asset('css/forum.css') }}">
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-            <div class="rounded-lg bg-white shadow-sm border border-gray-200 p-6">
-                <form method="POST" action="{{ route('forum.store') }}" class="space-y-6">
-                    @csrf
+    <div class="forum-wrapper">
 
-                    <div>
-                        <label for="title" class="block text-sm font-medium text-gray-700">Título</label>
-                        <input id="title" name="title" type="text" value="{{ old('title') }}" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" />
-                        @error('title')
-                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div>
-                        <label for="body" class="block text-sm font-medium text-gray-700">Mensaje</label>
-                        <textarea id="body" name="body" rows="8" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">{{ old('body') }}</textarea>
-                        @error('body')
-                            <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-                    <div class="flex justify-end">
-                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Publicar</button>
-                    </div>
-                </form>
-            </div>
+        <div class="form-header">
+            <a href="{{ route('forum.index') }}" class="btn-back">← Volver al foro</a>
+            <h1 class="forum-title">Nueva publicación</h1>
+            <p class="forum-subtitle">Escribe de forma anónima y segura</p>
         </div>
+
+        <div class="form-card">
+
+            <div class="anonymous-notice">
+                🔒 Tu publicación aparecerá como
+                <strong>{{ Auth::user()->anonymous_name }}</strong>
+            </div>
+
+            <form method="POST" action="{{ route('forum.store') }}">
+                @csrf
+
+                <div class="form-group">
+                    <label class="form-label">Título</label>
+                    <input
+                        type="text"
+                        name="title"
+                        class="form-input {{ $errors->has('title') ? 'input-error' : '' }}"
+                        placeholder="¿De qué quieres hablar?"
+                        value="{{ old('title') }}"
+                    >
+                    @error('title')
+                        <span class="error-msg">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Contenido</label>
+                    <textarea
+                        name="body"
+                        class="form-textarea {{ $errors->has('body') ? 'input-error' : '' }}"
+                        placeholder="Cuéntanos lo que sientes..."
+                        rows="8"
+                    >{{ old('body') }}</textarea>
+                    @error('body')
+                        <span class="error-msg">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-actions">
+                    <a href="{{ route('forum.index') }}" class="btn-outline">Cancelar</a>
+                    <button type="submit" class="btn-primary">Publicar →</button>
+                </div>
+
+            </form>
+
+        </div>
+
     </div>
+
 </x-app-layout>

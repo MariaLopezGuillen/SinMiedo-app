@@ -1,0 +1,339 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* Register Page */
+
+.register-body{
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top right,#ead8ff 0%,transparent 25%),
+    radial-gradient(circle at bottom left,#d8f9ff 0%,transparent 20%),
+    #f8f9ff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+
+
+.register-container{
+    width:100%;
+    max-width:1400px;
+
+    background:white;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    box-shadow:0 30px 80px rgba(0,0,0,0.08);
+}
+
+
+.register-left{
+    background:
+    linear-gradient(
+        135deg,
+        #D64A90,
+        #6B4EBA,
+        #29A2CA
+    );
+
+    padding:80px;
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* LOGO */
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    margin-bottom:40px;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.shield{
+    width:70px;
+    height:70px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.15);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    backdrop-filter:blur(10px);
+}
+
+.logo-box h1{
+    font-size:52px;
+    font-weight:800;
+}
+
+.logo-box span{
+    color:#ffd9ef;
+}
+
+/* TITLES */
+
+.register-left h2{
+    font-size:58px;
+    line-height:1.1;
+
+    margin-bottom:22px;
+}
+
+.register-left p{
+    font-size:18px;
+    line-height:1.8;
+
+    opacity:0.9;
+
+    margin-bottom:45px;
+}
+
+/* FEATURES */
+
+.register-features{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.feature-item{
+    background:rgba(255,255,255,0.12);
+
+    padding:18px 24px;
+
+    border-radius:18px;
+
+    font-size:17px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.register-right{
+    padding:80px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* FORM */
+
+.register-form{
+    width:100%;
+    max-width:500px;
+}
+
+.register-form h3{
+    font-size:42px;
+    color:#151D5C;
+
+    margin-bottom:35px;
+}
+
+/* INPUTS */
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#151D5C;
+
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+
+    padding:18px 20px;
+
+    border:none;
+
+    background:#f4f6fb;
+
+    border-radius:18px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border:2px solid #6B4EBA;
+
+    background:white;
+
+    box-shadow:0 0 0 5px rgba(107,78,186,0.1);
+}
+
+/* ERROR */
+
+.error{
+    display:block;
+
+    margin-top:8px;
+
+    color:#ff3f6c;
+
+    font-size:14px;
+}
+
+/* CONSENT */
+
+.consent-box{
+    margin-top:10px;
+    margin-bottom:25px;
+}
+
+.consent-box label{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    color:#666;
+}
+
+/* BUTTON */
+
+.register-btn-custom{
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #D64A90,
+        #6B4EBA
+    );
+
+    color:white;
+
+    font-size:17px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0 15px 35px rgba(107,78,186,0.25);
+}
+
+.register-btn-custom:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 20px 45px rgba(107,78,186,0.35);
+}
+
+/* LINKS */
+
+.bottom-links{
+    margin-top:28px;
+
+    text-align:center;
+}
+
+.bottom-links a{
+    text-decoration:none;
+
+    color:#6B4EBA;
+
+    font-weight:500;
+
+    transition:0.3s;
+}
+
+.bottom-links a:hover{
+    color:#D64A90;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .register-container{
+        grid-template-columns:1fr;
+    }
+
+    .register-left{
+        display:none;
+    }
+
+    .register-right{
+        padding:50px 30px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .register-form h3{
+        font-size:34px;
+    }
+
+    .input-group input{
+        padding:16px;
+    }
+
+    .register-btn-custom{
+        padding:16px;
+    }
+
+}
