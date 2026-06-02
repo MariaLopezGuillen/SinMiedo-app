@@ -29,6 +29,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
             'show'
         ]);
     });
+   Route::get('/help', function () {
+    return view('help.index');
+})->name('help.index');
 });
 
 require __DIR__ . '/auth.php';

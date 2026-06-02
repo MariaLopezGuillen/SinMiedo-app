@@ -114,15 +114,14 @@
         </div>
         <div class="footer-links">
             <h4>Navegación</h4>
-            <a href="#">Inicio</a>
-            <a href="#">¿Cómo funciona?</a>
+            <a href="#home">Inicio</a>
+            <a href="#funciona">¿Cómo funciona?</a>
             <a href="#recursos">Recursos</a>
-            <a href="#">Ayuda</a>
+            <a href="#normas">Normas</a>
         </div>
         <div class="footer-links">
             <h4>Seguridad</h4>
             <a href="#">Privacidad</a>
-            <a href="#">Normas</a>
             <a href="#">Contacto</a>
         </div>
         <div class="footer-message">
@@ -135,8 +134,9 @@
     </div>
     <div class="footer-bottom">
         <p>
-            © {{ date('Y') }} Sin Miedo · Todos los derechos reservados · <a href="https://gondo.es/"
-                style="color: #c084fc;">Gondo Psicologia</a>
+            © {{ date('Y') }} Sin Miedo · Todos los derechos reservados · En colaboración con <a
+                href="https://gondo.es/" style="color: #ffffff;">Gondo Psicologia</a> · Hecho por <a
+                href="https://maria-lg.vercel.app/" style="color: #ececec;"> Maria LG</a>
         </p>
     </div>
 </footer>

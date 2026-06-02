@@ -21,8 +21,7 @@
                     lo que sientes con personas que te entienden.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn-primary">🛡️ Necesito ayuda</a>
-                    <a href="{{ route('forum.index') }}" class="btn-outline">💬 Ir al foro</a>
+                    <a href="{{ route('help.index') }}" class="btn-primary">🛡️ Necesito ayuda</a>
                 </div>
             </div>
 
