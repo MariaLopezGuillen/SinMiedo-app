@@ -1,40 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .test-container {
     max-width: 650px;
     margin: auto;
-    padding: 20px;
-    background: #F8FAFC;
-    border-radius: 12px;
+    padding: 24px;
+    background: #0d0d1a;
+    border-radius: 16px;
     font-family: 'Poppins', sans-serif;
+}
+
+.test-container h2 {
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #c93faa, #7B2FF7, #00c9c8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+}
+
+.test-container p {
+    color: #8b8fa8;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.progress-label {
+    font-size: 13px;
+    color: #8b8fa8;
+    margin-bottom: 6px;
+}
+
+.progress-bar-bg {
+    background: #1e1e35;
+    border-radius: 99px;
+    height: 6px;
+    margin-bottom: 22px;
+}
+
+.progress-bar-fill {
+    background: linear-gradient(90deg, #c93faa, #7B2FF7, #00c9c8);
+    height: 6px;
+    border-radius: 99px;
+    width: 20%;
+    transition: width 0.4s ease;
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2e2e50;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #7B2FF7;
+}
+
+.dot.done {
+    background: #00c9c8;
+}
+
+.question-block {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.question-block label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #e8e8f4;
+    margin-bottom: 12px;
+    line-height: 1.5;
 }
 
 .test-container select {
     width: 100%;
-    margin: 8px 0 15px;
-    padding: 8px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1.5px solid #2e2e50;
+    background-color: #13132a;
+    color: #e8e8f4;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 4px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    color-scheme: dark;
 }
 
-button {
-    background: #7B2FF7;
-    color: white;
-    padding: 12px 18px;
+.test-container select:focus {
+    border-color: #7B2FF7;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#btnPrev {
+    background: transparent;
+    color: #c93faa;
+    border: 1.5px solid #c93faa;
+    padding: 11px 20px;
     border-radius: 25px;
-    border: none;
     cursor: pointer;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.2s;
+    display: none;
+}
+
+#btnPrev:hover {
+    background: rgba(201, 63, 170, 0.1);
+}
+
+#btnNext {
+    background: linear-gradient(90deg, #c93faa, #7B2FF7);
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+#btnNext:hover {
+    opacity: 0.88;
+}
+
+.error-msg {
+    color: #f472b6;
+    font-size: 13px;
+    margin-top: 4px;
+    min-height: 18px;
 }
 
 #resultadoClinico {
     margin-top: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 10px;
+    padding: 18px;
+    background: #13132a;
+    border-radius: 12px;
+    border: 1px solid #2e2e50;
+    display: none;
+}
+
+.resultado-texto {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 14px;
 }
 
 .btn-help {
     display: inline-block;
-    margin-top: 10px;
-    background: #2563EB;
-    color: white;
-    padding: 10px 15px;
+    margin-top: 4px;
+    background: linear-gradient(90deg, #00b4b4, #00c9c8);
+    color: #0d0d1a;
+    padding: 11px 20px;
     border-radius: 20px;
     text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
