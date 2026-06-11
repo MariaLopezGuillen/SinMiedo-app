@@ -103,7 +103,7 @@ function calcularClinico() {
     const res = document.getElementById('resultadoClinico');
     res.style.display = 'block';
     res.innerHTML = `<p class="resultado-texto" style="color:${color}">${msg}</p>
-        <a class="btn-help" href="#">Pedir ayuda</a>`;
+        <a class="btn-help" href="">Pedir ayuda</a>`;
 }
 
 document.addEventListener('DOMContentLoaded', renderPregunta);

@@ -22,7 +22,7 @@
         </div>
 
         <nav>
-            <a href="home">Inicio</a>
+            <a href="#home">Inicio</a>
             <a href="#funciona">¿Cómo funciona?</a>
             <a href="#recursos">Recursos</a>
             <a href="#normas">Normas de la comunidad</a>
@@ -30,48 +30,48 @@
         <a href="/login" class="login-btn">Iniciar sesión</a>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home"">
 
-        <div class="hero-left">
+        <div class=" hero-left">
 
-            <div class="badge">
-                💜 Tu bienestar importa
+        <div class="badge">
+            💜 Tu bienestar importa
+        </div>
+
+        <h1>
+            Habla.<br>
+            Pide ayuda.<br>
+            <span>No estás solo.</span>
+        </h1>
+
+        <p>
+            Sin Miedo es una plataforma segura y confidencial creada para ayudar
+            a jóvenes que sufren bullying, acoso o necesitan apoyo emocional.
+        </p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">💬</div>
+                <span>Habla de lo que te pasa</span>
             </div>
-
-            <h1>
-                Habla.<br>
-                Pide ayuda.<br>
-                <span>No estás solo.</span>
-            </h1>
-
-            <p>
-                Sin Miedo es una plataforma segura y confidencial creada para ayudar
-                a jóvenes que sufren bullying, acoso o necesitan apoyo emocional.
-            </p>
-
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">💬</div>
-                    <span>Habla de lo que te pasa</span>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🛡️</div>
-                    <span>Pide ayuda de forma segura</span>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🤝</div>
-                    <span>Recibe apoyo y orientación</span>
-                </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <span>Pide ayuda de forma segura</span>
             </div>
-
-            <div class="buttons">
-                <a href="/register" class="primary-btn">Comenzar ahora</a>
-                <a href="#" class="secondary-btn">Saber más</a>
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <span>Recibe apoyo y orientación</span>
             </div>
+        </div>
+
+        <div class="buttons">
+            <a href="/register" class="primary-btn">Comenzar ahora</a>
+            <a href="#" class="secondary-btn">Saber más</a>
+        </div>
 
         </div>
 
-        <div class="hero-right" id="home">
+        <div class="hero-right">
             <div class="circle-bg"></div>
             <div class="phone">
                 <div class="phone-screen">
