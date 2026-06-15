@@ -33,5 +33,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     return view('help.index');
 })->name('help.index');
 });
+   Route::get('/reports', function () {
+    return view('reports.index');
+})->name('reports.index');
+
 
 require __DIR__ . '/auth.php';

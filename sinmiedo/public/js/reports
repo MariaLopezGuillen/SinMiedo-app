@@ -1,0 +1,156 @@
+import { useState } from "react";
+
+export default function ReportForm() {
+  const [step, setStep] = useState(1);
+
+  const [form, setForm] = useState({
+    category: "",
+    description: "",
+    location: "",
+    frequency: "",
+    victim: "",
+    aggressors: 1,
+    emotion: "",
+    intensity: 3
+  });
+
+  const handleChange = (key, value) => {
+    setForm({ ...form, [key]: value });
+  };
+
+  const next = () => setStep(step + 1);
+  const back = () => setStep(step - 1);
+
+  const submitReport = () => {
+    fetch("/api/reports", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(form)
+    });
+
+    alert("Reporte enviado de forma anónima");
+  };
+
+  return (
+    <div className="report-container">
+
+      {/* PROGRESS */}
+      <div className="progress">
+        Paso {step} / 5
+      </div>
+
+      {/* STEP 1 */}
+      {step === 1 && (
+        <div>
+          <h2>¿Qué está pasando?</h2>
+
+          <button onClick={() => handleChange("category", "verbal")}>
+            Insultos / humillaciones
+          </button>
+
+          <button onClick={() => handleChange("category", "fisico")}>
+            Agresiones físicas
+          </button>
+
+          <button onClick={() => handleChange("category", "digital")}>
+            Acoso online
+          </button>
+
+          <button onClick={next}>Siguiente</button>
+        </div>
+      )}
+
+      {/* STEP 2 */}
+      {step === 2 && (
+        <div>
+          <h2>Cuéntanos qué ha pasado</h2>
+
+          <textarea
+            placeholder="Describe la situación..."
+            onChange={(e) => handleChange("description", e.target.value)}
+          />
+
+          <button onClick={back}>Atrás</button>
+          <button onClick={next}>Siguiente</button>
+        </div>
+      )}
+
+      {/* STEP 3 */}
+      {step === 3 && (
+        <div>
+          <h2>¿Dónde ocurre?</h2>
+
+          <select onChange={(e) => handleChange("location", e.target.value)}>
+            <option value="aula">Aula</option>
+            <option value="patio">Patio</option>
+            <option value="online">Online</option>
+            <option value="pasillos">Pasillos</option>
+          </select>
+
+          <h3>Frecuencia</h3>
+
+          <select onChange={(e) => handleChange("frequency", e.target.value)}>
+            <option value="una_vez">Una vez</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuente">Frecuente</option>
+            <option value="diario">Todos los días</option>
+          </select>
+
+          <button onClick={back}>Atrás</button>
+          <button onClick={next}>Siguiente</button>
+        </div>
+      )}
+
+      {/* STEP 4 */}
+      {step === 4 && (
+        <div>
+          <h2>Información del caso</h2>
+
+          <select onChange={(e) => handleChange("victim", e.target.value)}>
+            <option value="self">Me afecta a mí</option>
+            <option value="other">A otra persona</option>
+            <option value="unknown">No estoy seguro</option>
+          </select>
+
+          <input
+            type="number"
+            min="1"
+            max="10"
+            placeholder="Número de agresores"
+            onChange={(e) => handleChange("aggressors", e.target.value)}
+          />
+
+          <button onClick={back}>Atrás</button>
+          <button onClick={next}>Siguiente</button>
+        </div>
+      )}
+
+      {/* STEP 5 */}
+      {step === 5 && (
+        <div>
+          <h2>¿Cómo te sientes?</h2>
+
+          <select onChange={(e) => handleChange("emotion", e.target.value)}>
+            <option value="triste">Triste</option>
+            <option value="miedo">Miedo</option>
+            <option value="ansiedad">Ansiedad</option>
+            <option value="rabia">Rabia</option>
+          </select>
+
+          <label>Intensidad (1-5)</label>
+          <input
+            type="range"
+            min="1"
+            max="5"
+            onChange={(e) => handleChange("intensity", e.target.value)}
+          />
+
+          <button onClick={back}>Atrás</button>
+          <button onClick={submitReport}>Enviar reporte</button>
+        </div>
+      )}
+    </div>
+  );
+}

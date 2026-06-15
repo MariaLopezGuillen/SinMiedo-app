@@ -78,7 +78,7 @@
                     <img src="{{ asset('images/logo.png') }}" alt="Sin Miedo" class="phone-logo" style="height: 200px;">
                     <p>Habla. Pide ayuda.<br>No estás solo.</p>
                     <div class="friends">🧑🏽‍🤝‍🧑🏼</div>
-                    <button class="start-btn">Entrar</button>
+                    <a href="/login" class="start-btn">Entrar</a>
                 </div>
             </div>
         </div>
