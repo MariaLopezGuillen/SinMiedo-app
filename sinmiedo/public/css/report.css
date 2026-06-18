@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* TÍTULO */
+h2 {
+    text-align: center;
+    color: #1f2d3d;
+}
+
+/* SUBTÍTULO */
+.subtitle {
+    text-align: center;
+    color: #666;
+}
+
+/* WARNING */
+.warning {
+    background: #ffe5e5;
+    padding: 10px;
+    border-radius: 8px;
+    color: #a00;
+    margin: 15px 0;
+    text-align: center;
+}
+
+/* LABELS */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+    color: #333;
+}
+
+/* INPUTS */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+/* TEXTAREA */
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* FILAS */
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row > div {
+    flex: 1;
+}
+
+/* BOTÓN */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+}
