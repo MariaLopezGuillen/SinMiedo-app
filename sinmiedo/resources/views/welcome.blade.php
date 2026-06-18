@@ -66,7 +66,7 @@
 
         <div class="buttons">
             <a href="/register" class="primary-btn">Comenzar ahora</a>
-            <a href="#" class="secondary-btn">Saber más</a>
+            <a href="#saber" class="secondary-btn">Saber más</a>
         </div>
 
         </div>
@@ -221,6 +221,104 @@
 
         </div>
         </div>
+    </section>
+    <!-- IMPACTO -->
+
+
+    <section class="impact" id="saber">
+
+
+        <div class="container">
+
+
+            <h2>
+                Nuestro objetivo
+            </h2>
+
+
+            <p>
+
+                Construir una comunidad donde ningún estudiante tenga que
+                enfrentarse solo al bullying.
+
+            </p>
+
+
+            <div class="numbers">
+
+
+                <div>
+
+                    <strong>
+                        100%
+                    </strong>
+
+                    <span>
+                        Anonimato
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        24/7
+                    </strong>
+
+                    <span>
+                        Acceso seguro
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        IA
+                    </strong>
+
+                    <span>
+                        Detección inteligente
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- CTA -->
+
+
+    <section class="join">
+
+
+        <h2>
+            ¿Quieres formar parte del cambio?
+        </h2>
+
+
+        <p>
+            Empresas, centros educativos y personas pueden colaborar
+            para crear espacios más seguros.
+        </p>
+
+        <a href="#" class="btn">
+            Colaborar
+        </a>
+
+
     </section>
     <x-footer></x-footer>
 </body>

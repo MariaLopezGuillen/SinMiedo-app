@@ -35,6 +35,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/help', function () {
         return view('help.index');
     })->name('help.index');
+
+    //Ruta para saber más
+    Route::get('/about', function () {
+        return view('about.index');
+    })->name('about');
 });
 // Rutas para reportes anónimos
 Route::get('/reports', [ReportController::class, 'index']);
