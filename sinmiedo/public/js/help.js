@@ -1,20 +1,14 @@
 const preguntas = [
-    "1.Me han dicho cosas para hacerme sentir mal o inferior.",
-    "2. Me han dejado solo/a a propósito en recreos, fiestas o reuniones.",
-    "3. Me han insultado,amenazado o humillado a través del movil o redes sociales.",
-    "4. Algun compañero/a me ha golpeado, empujado o me ha hecho daño fisico.",
-    "5. Siento miedo o ansiedad cuando tengo que ir a la escuela o al instituto.",
-    "6. Han hablado mal de mi a mis espaldas para que otros me rechacen.",
-    "7. Me han excluido de grupos de Whatsapp u otras redes socioales de forma intencionada para hacerme daño.",
-    "8. Siento que mis compañeros me rechazan sin que yo haya hecho nada.",
-    "9. Me han amenazado con hacerme daño físico.",
-    "10. Todo esto me lleva pasando más de un mes.",
-    "11. Han compartido fotos, videos o mensajes mios sin mi permiso para hacerme quedar mal.",
-    "12. Me han insultado, puesto motes o se han burlados de mi delante de otros compañeros/as.",
-    "13. Me siento solo/a y sin nadie a quien contarselo.",
-    "14. Me han quitado o roto cosas mias a propósito.",
-    "15. Me han ignorado o dejado de lado cuando quería participar en algo.",
-    "16. He pensado en no querer ir al colegio o al instituto por culpa de esto.",
+    "1.Me han insultado, puesto motes, burlado o dicho cosas para hacerme sentir mal delante de otros.",
+    "2. Han hablado mal de mí o han intentado que otros compañeros me rechacen.",
+    "3. Me han dejado solo/a, ignorado o excluido de grupos, actividades o juegos a propósito.",
+    "4. Siento que mis compañeros me rechazan o no me aceptan aunque no haya hecho nada.",
+    "5. Me han insultado, amenazado o humillado mediante el móvil, redes sociales o grupos online.",
+    "6. Han compartido fotos, vídeos o mensajes míos sin permiso para hacerme quedar mal.",
+    "7. Me han pegado, empujado, amenazado con hacerme daño o han roto/quedado con mis cosas a propósito.",
+    "8. Siento miedo, ansiedad o preocupación cuando tengo que ir al colegio/instituto por esta situación.",
+    "9. Me siento solo/a, sin apoyo o sin nadie a quien contarle lo que ocurre",
+    "10. Esta situación lleva ocurriendo más de un mes o ha hecho que no quiera ir al colegio/instituto.",
 ];
 
 const opciones = ["Nunca", "A veces", "Frecuentemente", "Casi siempre"];
@@ -99,22 +93,30 @@ function calcularClinico() {
     const total = respuestas.reduce((a, b) => a + (b || 0), 0);
     let msg = '', color = '';
 
-    if (total <= 10) {
-        msg = 'Lo que nos cuentas no muestra señales claras de acoso.Aún así en algun momento sientes que algo no va bien, no dudes en hablar con alguien de confianza. ¡Estamos aquí para ayudarte!    ';
+    if (total <= 7) {
+        msg = 'Lo que nos cuentas no muestra señales claras de acoso. Aun así, si en algún momento sientes que algo no va bien, habla con alguien de confianza. Estamos aquí para ayudarte.';
         color = '#4ade80';
-    } else if (total >= 11 && total <= 24) {
-        msg = '¡Lo que describes merece atención!.Hay situaciones que no deberian estar pasando y que tienen solución.Te recomendamos leer nuestros recursos o hablar con alguien de confianza. Si quieres,tambien puedes escribirnos para orientarte mejor.    ';
+
+    } else if (total >= 8 && total <= 17) {
+        msg = 'Lo que describes merece atención. Puede haber situaciones que no deberían estar ocurriendo. Te recomendamos hablar con alguien de confianza o consultar nuestros recursos.';
         color = '#fbbf24';
-    } else if (total >= 25 && total <= 48) {
-        msg = 'Lo que estás viviendo es serio u no deberias cargarlo solo/a. Hay personas preparadas para ayudarte ahora mismo.Da igual si no tienes del todo claro lo que está pasando,eso tambien es motivo de preocupación. No dudes en pedir ayuda, ¡estamos aquí para ti!      ';
+
+    } else if (total >= 18) {
+        msg = 'Lo que estás viviendo puede ser una situación seria y no deberías afrontarla solo/a. Busca apoyo en alguien de confianza o pide ayuda.';
         color = '#f87171';
     }
 
     document.getElementById('testClinico').style.display = 'none';
+
     const res = document.getElementById('resultadoClinico');
     res.style.display = 'block';
-    res.innerHTML = `<p class="resultado-texto" style="color:${color}">${msg}</p>
-        <a class="btn-help" href="https://gondo.es/">Pedir ayuda</a>`;
+
+    res.innerHTML = `
+        <p class="resultado-texto" style="color:${color}">
+            ${msg}
+        </p>
+        <a class="btn-help" href="https://gondo.es/">Pedir ayuda</a>
+    `;
 }
 
 document.addEventListener('DOMContentLoaded', renderPregunta);
